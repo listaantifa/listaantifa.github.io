@@ -1,10 +1,57 @@
 <html>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <head>
         <title>listaantifa</title>
+        <link rel="stylesheet" href="css/spectre.min.css">
+        <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
-        <p>
-        Em construção...
-        </p>
+        <div class="hero hero-sm bg-dark">
+            <div class="hero-body">
+                <div class="content">
+                <h2>listaantifa v0.1</h2>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <p></p>
+            <h3>Verificador</h3>
+            <p>Este é um verificador de nomes na lista de antifascistas que está circulando
+            pela internet, conforme notícias abaixo:</p>
+
+            <ul>
+                <li><a href="https://www.brasildefato.com.br/2020/06/04/apos-divulgacao-de-dados-de-antifascistas-deputado-bolsonarista-pode-ser-cassado">Após divulgação de dados de antifascistas, deputado bolsonarista pode ser cassado</a></li>
+                <li><a href="https://www.cartacapital.com.br/politica/deputado-cria-lista-com-informacoes-pessoais-de-manifestantes-antifascistas-e-documento-e-vazado/">Deputado cria lista com informações pessoais de manifestantes antifascistas e documento é vazado</a></li>
+            </ul>
+            <p>Para utilizá-lo, digite seu nome abaixo e clique em 'Buscar'</p>
+            <form action="javascript:void(0);">
+                <div class="input-group">
+                  <input id="nome" class="form-input" type="text" placeholder="Nome ou apelido">
+                  <button class="btn btn-primary input-group-btn" onclick="buscar()">Buscar</button>
+                </div>
+            </form>
+            <p id="resultado">
+            </p>
+            <p></p>
+            <h3>Dicas</h3>
+            <p>Digite variações do seu nome e apelido. Por exemplo, se alguém
+            se chama <em>João da Silva Santos</em> e possui o apelido <em>Jon</em>, algumas buscas
+            recomendadas seriam:
+            <ul>
+                <li>João da Silva Santos</li>
+                <li>Jon</li>
+                <li>João Jon</li>
+                <li>João Santos</li>
+                <li>Jon João</li>
+                <li>Jon Santos</li>
+            </ul>
+            <p></p>
+            <h3>Notas</h3>
+            <p>Alguns nomes na lista não possuem sobrenome, portanto ocorrerão falsos positivos.</p>
+            <p>Este verificador utiliza apenas <a href="https://pt.wikipedia.org/wiki/Função_hash_criptográfica">hashes criptográficos</a> dos nomes presentes na lista. Desta forma, não é possível saber os nomes presentes na lista a partir desta página, exceto por força bruta (tentativa e erro).</p>
+        </div>
     </body>
+    <script src="js/hashes.js"></script>
+    <script src="js/sha512.js"></script>
+    <script src="js/busca.js"></script>
 </html>
