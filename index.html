@@ -17,13 +17,13 @@
         <div class="hero hero-sm bg-dark">
             <div class="hero-body">
                 <div class="content">
-                <h2>listaantifa v0.1</h2>
+                <h2>listaantifa v0.2</h2>
                 </div>
             </div>
         </div>
         <div class="content container grid-lg">
             <p></p>
-            <h3>Verificador</h3>
+            <h3>Verificador de nomes</h3>
             <p>Este é um verificador de nomes na lista de antifascistas que está circulando
             pela internet, conforme notícias abaixo:</p>
 
@@ -39,6 +39,23 @@
                 </div>
             </form>
             <p id="resultado">
+            </p>
+            <p></p>
+            <h3>Verificador de rede social</h3>
+            <p>Também foram vazadas as redes sociais de diversas pessoas.
+            Se quiser saber se a sua está na lista, busque abaixo. Exemplos: (apenas as redes sociais abaixo estão presentes na busca)</p>
+            <ul>
+                <li>facebook.com/SeuUsuario</li>
+                <li>instagram.com/SeuUsuario</li>
+                <li>linkedin.com/in/SeuUsuario</li>
+            </ul>
+            <form action="javascript:void(0);">
+                <div class="input-group">
+                  <input id="url" class="form-input" type="text" placeholder="URL (endereço) da rede social">
+                  <button class="btn btn-primary input-group-btn" onclick="buscarRedeSocial()">Buscar</button>
+                </div>
+            </form>
+            <p id="resultado-rede-social">
             </p>
             <p></p>
             <h3>Dicas</h3>
@@ -61,6 +78,7 @@
         </div>
     </body>
     <script src="js/hashes.js"></script>
+    <script src="js/hashes_redes_sociais.js"></script>
     <script src="js/sha512.js"></script>
     <script src="js/busca.js"></script>
 </html>

@@ -21,6 +21,30 @@ function naoencontrado(nome) {
     res.innerHTML = '<div class="toast toast-success">O nome <em>' + nome + "</em> <b>não</b> foi encontrado. É recomendável tentar diversas combinações, conforme as dicas abaixo.</div>";
 }
 
+function buscarRedeSocial() {
+    let url = document.getElementById("url").value;
+    let url2 = removerAcentos(url.trim().toLowerCase().replace("https://", "").replace("http://", "").replace("www.", "").replace(/\/$/, ""));
+    console.log(url2);
+    if (url2 !== "") {
+        let hash = hex_sha512(url2);
+        if (hashesRedesSociais.has(hash)) {
+            encontradoRedeSocial(url);
+        } else {
+            naoencontradoRedeSocial(url);
+        }
+    }
+}
+
+function encontradoRedeSocial(url) {
+    let res = document.getElementById("resultado-rede-social");
+    res.innerHTML = '<div class="toast toast-error">O endereço <em>' + url + "</em> foi <b>encontrado</b> na lista.</div>";
+}
+
+function naoencontradoRedeSocial(url) {
+    let res = document.getElementById("resultado-rede-social");
+    res.innerHTML = '<div class="toast toast-success">O endereço <em>' + url + "</em> <b>não</b> foi encontrado.</div>";
+}
+
 /**
  * Remove acentos de strings
  * @param  {String} string acentuada
