@@ -4,21 +4,21 @@ function buscar() {
     if (nome2 !== "") {
         let hash = hex_sha512(nome2);
         if (hashes.has(hash)) {
-            encontrado();
+            encontrado(nome);
         } else {
-            naoencontrado();
+            naoencontrado(nome);
         }
     }
 }
 
-function encontrado() {
+function encontrado(nome) {
     let res = document.getElementById("resultado");
-    res.innerHTML = "O nome foi <b>encontrado</b> na lista. Como pode ser um homônimo, sugere-se buscar a lista completa e verificar se esta pessoa realmente está nela.";
+    res.innerHTML = "O nome <em>" + nome + "</em> foi <b>encontrado</b> na lista. Como pode ser um homônimo, sugere-se buscar a lista completa e verificar se esta pessoa realmente está nela.";
 }
 
-function naoencontrado() {
+function naoencontrado(nome) {
     let res = document.getElementById("resultado");
-    res.innerHTML = "O nome <b>não</b> foi encontrado.";
+    res.innerHTML = "O nome <em>" + nome + "</em> <b>não</b> foi encontrado. É recomendável tentar diversas combinações, conforme as dicas abaixo.";
 }
 
 /**
